@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(listAdapter);
 
+        //測試使用
         listAdapter.addItem(new Hobby("游泳"));
         listAdapter.addItem(new Hobby("寫程式"));
         listAdapter.addItem(new Hobby("玩遊戲"));
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         listAdapter.addItem(new Hobby("跳高"));
         listAdapter.addItem(new Hobby("跳水"));
 
-
+        //動態新增
         imageView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
