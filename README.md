@@ -1,2 +1,2 @@
-只做了技能這個功能
+只做了"技能"這部分的功能
 ![screenshot.jpg](screenshot.jpg)
