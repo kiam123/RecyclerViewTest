@@ -44,8 +44,10 @@ public class MainActivity extends AppCompatActivity {
         imageView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listAdapter.addItem(new Hobby(editText1.getText().toString()));
-                editText1.setText("");
+                if(!editText1.getText().toString().trim().equals("")) {
+                    listAdapter.addItem(new Hobby(editText1.getText().toString()));
+                    editText1.setText("");
+                }
             }
         });
     }
