@@ -12,26 +12,26 @@ import java.util.ArrayList;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class ExperienceListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     ArrayList arrayList;
     Context mContext;
 
-    public ListAdapter(Context context) {
+    public ExperienceListAdapter(Context context) {
         mContext = context;
-        arrayList = new ArrayList<Hobby>();
+        arrayList = new ArrayList<Experience>();
     }
 
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.recycler_view_hoppy,
+        return new ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.recycler_view_experince,
                 parent, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        Hobby hobby = (Hobby) arrayList.get(position);
-        ((ViewHolder)holder).bindToHobby(hobby);
+        Experience experience = (Experience) arrayList.get(position);
+        ((ViewHolder)holder).bindToHobby(experience);
     }
 
     @Override
@@ -39,8 +39,8 @@ public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         return arrayList.size();
     }
 
-    public void addItem(Hobby hobby) {
-        arrayList.add(hobby);
+    public void addItem(Experience experience) {
+        arrayList.add(experience);
         notifyDataSetChanged();
     }
 
@@ -52,7 +52,7 @@ public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             textView = (TextView) itemView.findViewById(R.id.textView);
-            imageView = (ImageView) itemView.findViewById(R.id.imageView);
+            imageView = (ImageView) itemView.findViewById(R.id.experienceAddImage);
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -63,8 +63,8 @@ public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             });
         }
 
-        public void bindToHobby(Hobby hobby) {
-            textView.setText(hobby.getHobby());
+        public void bindToHobby(Experience experience) {
+            textView.setText(experience.getExperience());
         }
     }
 }

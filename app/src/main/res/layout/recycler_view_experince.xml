@@ -18,7 +18,7 @@
         android:text="TextView" />
 
     <ImageView
-        android:id="@+id/hobbyAddImage"
+        android:id="@+id/experienceAddImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@android:drawable/ic_delete" />
